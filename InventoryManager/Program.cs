@@ -15,14 +15,16 @@ namespace InventoryManager
             {
                 Console.WriteLine("Need 1 parameter to proceed:");
                 Console.WriteLine("The full path including filename of a file containing item names, sellin values and quality values");
-                Environment.Exit(-1);
+            }
+            else
+            {
+                // Extract the name of the input file into a variable
+                string inputFilename = args[0].Trim();
+
+                // Process the contents of the input file; pass in the format for the output file name where the results of the execution will be published
+                ProcessLines(inputFilename + ".out", System.IO.File.ReadAllLines(inputFilename));
             }
 
-            // Extract the name of the input file into a variable
-            string inputFilename = args[0].Trim();
-
-            // Process the contents of the input file; pass in the format for the output file name where the results of the execution will be published
-            ProcessLines(inputFilename + ".out", System.IO.File.ReadAllLines(inputFilename));
             Console.WriteLine(Environment.NewLine + "Press any key to continue...");
             Console.ReadLine();
         }
