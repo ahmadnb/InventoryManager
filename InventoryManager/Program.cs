@@ -25,7 +25,7 @@ namespace InventoryManager
                 ProcessLines(inputFilename + ".out", System.IO.File.ReadAllLines(inputFilename));
             }
 
-            Console.WriteLine(Environment.NewLine + "Press any key to continue...");
+            Console.WriteLine(Environment.NewLine + "Press ENTER to continue...");
             Console.ReadLine();
         }
 
